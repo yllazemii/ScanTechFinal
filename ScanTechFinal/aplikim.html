@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elsa-Tech | Apliko për Punë</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    nav {
+      background: linear-gradient(90deg, #ff6600, #ff8533);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .clock-status {
+      color: white;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      background: linear-gradient(180deg, #ffffff, #f2f2f2);
+    }
+
+    header h1 {
+      color: #ff6600;
+      font-size: 2.5rem;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+    }
+
+    /* Form */
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    form h2 {
+      color: #ff6600;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    input[type="file"] {
+      padding: 0.4rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 0.9rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e65c00;
+    }
+
+    .success-message {
+      display: none;
+      color: green;
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #ddd;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #ff8533;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a href="index.html">
+        <img src="cropped-cropped-cropped-images-removebg-preview.png" alt="Elsa-Tech Logo" />
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pakot.html">Pakot dhe Çmimet</a>
+      <a href="klientsezonal.html">Klient Sezonal</a>
+      <a href="biznes.html">Pako për Biznese</a>
+      
+      <a href="aplikim.html">Aplikim për Punë</a>
+      
+    </div>
+    <div id="clock" class="clock-status"></div>
+  </nav>
+
+  <header>
+    <h1>Apliko për Punë</h1>
+    <p>Jemi gjithmonë në kërkim të talenteve të rinj për t'u bashkuar me ekipin tonë në Elsa-Tech.</p>
+  </header>
+
+  <main>
+    <form id="jobForm">
+      <h2>Formulari i Aplikimit</h2>
+
+      <label for="name">Emri dhe Mbiemri</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Numri i Telefonit</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="message">Mesazhi</label>
+      <textarea id="message" name="message" rows="4" placeholder="Pse dëshironi të punoni tek Elsa-Tech?"></textarea>
+
+      <label for="cv">Ngarko CV-në (PDF ose DOCX)</label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required />
+
+      <button type="submit">Dërgo Aplikimin</button>
+
+      <div class="success-message" id="successMessage">
+        ✅ Aplikimi juaj u dërgua me sukses!
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>📞 Na kontaktoni: 044 553 779 | ✉️ <a href="mailto:info@elsa-tech.com">info@elsa-tech.com</a></p>
+    <p>© 2025 Elsa-Tech. Të gjitha të drejtat e rezervuara.</p>
+  </footer>
+
+  <script>
+    // Clock API
+    function updateClockStatus() {
+      const now = new Date();
+      const hour = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      const seconds = now.getSeconds().toString().padStart(2, "0");
+
+      const clock = document.getElementById("clock");
+      const timeString = `${hour}:${minutes}:${seconds}`;
+      const isOpen = hour >= 8 && hour < 23;
+
+      clock.innerHTML = `
+        <span style="font-weight:600;">${timeString}</span>
+        <span style="color:${isOpen ? 'limegreen' : 'red'}; font-weight:bold; margin-left:8px;">
+          ${isOpen ? 'Open' : 'Closed'}
+        </span>
+      `;
+    }
+    updateClockStatus();
+    setInterval(updateClockStatus, 1000);
+
+    // Form handler
+    document.getElementById("jobForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("successMessage").style.display = "block";
+      this.reset();
+    });
+  </script>
+</body>
+</html>

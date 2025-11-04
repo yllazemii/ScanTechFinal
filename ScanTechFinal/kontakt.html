@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Na Kontaktoni - Elsa-Tech</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #ff6600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    nav img {
+      height: 50px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    #clock {
+      font-weight: bold;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    /* Main Section */
+    main {
+      flex: 1;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff6600;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .contact-info {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .contact-info strong {
+      color: #ff6600;
+    }
+
+    /* Contact form */
+    form {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 25px;
+      width: 90%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #e65c00;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #ff6600;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="cropped-cropped-cropped-images-removebg-preview.png" alt="Elsa-Tech Logo" /></a>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="pakot.html">Pakot dhe Çmimet</a>
+      <a href="klientsezonal.html">Klient Sezonal</a>
+      <a href="biznes.html">Pako për Biznese</a>
+      
+      <a href="aplikim.html">Aplikim për Punë</a>
+      
+    </div>
+    <div id="clock"></div>
+  </nav>
+
+  <main>
+    <h1>Na Kontaktoni</h1>
+    <p>Na kontaktoni për çdo pyetje, ofertë ose bashkëpunim të mundshëm. Ekipi ynë do t’ju përgjigjet sa më shpejt të jetë e mundur!</p>
+
+    <div class="contact-info">
+      <p><strong>📞 Telefoni:</strong> 044 553 779</p>
+      <p><strong>📧 Email:</strong> <a href="mailto:info@elsa-tech.com">info@elsa-tech.com</a></p>
+      <p><strong>📍 Adresa:</strong> Lipjan, Kosovë</p>
+      <p><strong>🕓 Orari:</strong> 08:00 - 23:00 (Çdo ditë)</p>
+    </div>
+
+    <form action="#" method="POST">
+      <input type="text" name="emri" placeholder="Emri juaj" required />
+      <input type="email" name="email" placeholder="Email-i juaj" required />
+      <textarea name="mesazhi" placeholder="Shkruani mesazhin tuaj..." required></textarea>
+      <button type="submit">Dërgo Mesazhin</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>📞 Na kontaktoni: 044 553 779 | ✉️ <a href="mailto:info@elsa-tech.com">info@elsa-tech.com</a></p>
+    <p>© 2025 Elsa-Tech. Të gjitha të drejtat e rezervuara.</p>
+  </footer>
+
+  <script>
+    // Clock and open/close status
+    function updateClock() {
+      const now = new Date();
+      const hour = now.getHours();
+      const minute = now.getMinutes().toString().padStart(2, '0');
+      const second = now.getSeconds().toString().padStart(2, '0');
+      const open = hour >= 8 && hour < 23;
+      const clock = document.getElementById('clock');
+      clock.innerHTML = `${hour}:${minute}:${second} 
+        <span style="color:${open ? 'limegreen' : 'red'}; font-weight:bold;">
+          ${open ? 'Open' : 'Closed'}
+        </span>`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
